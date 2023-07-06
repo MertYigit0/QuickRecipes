@@ -1,4 +1,4 @@
-package com.example.quickrecipes;
+package com.example.quickrecipes.login_register;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -13,6 +13,8 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.Toast;
 
+import com.example.quickrecipes.R;
+import com.example.quickrecipes.recipes.RecipesActivity;
 import com.example.quickrecipes.databinding.FragmentRegisterBinding;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;

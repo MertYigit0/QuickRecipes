@@ -1,14 +1,7 @@
-package com.example.quickrecipes;
+package com.example.quickrecipes.login_register;
 
 import android.content.Intent;
 import android.os.Bundle;
-
-import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
-import androidx.fragment.app.Fragment;
-import androidx.navigation.NavDirections;
-import androidx.navigation.Navigation;
-
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -16,7 +9,15 @@ import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
+import androidx.fragment.app.Fragment;
+import androidx.navigation.NavDirections;
+import androidx.navigation.Navigation;
+
+import com.example.quickrecipes.R;
 import com.example.quickrecipes.databinding.FragmentLoginBinding;
+import com.example.quickrecipes.recipes.RecipesActivity;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.auth.AuthResult;
@@ -89,7 +90,7 @@ public class LoginFragment extends Fragment {
                 registerNowClicked(view);
             }
         });
-    }
+}
 
         public void loginClicked(View view){
 

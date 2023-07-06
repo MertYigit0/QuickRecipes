@@ -1,8 +1,10 @@
-package com.example.quickrecipes;
+package com.example.quickrecipes.login_register;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+
+import com.example.quickrecipes.R;
 
 public class MainActivity extends AppCompatActivity {
 

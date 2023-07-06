@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <!-- User name TextView -->
+    <TextView
+        android:id="@+id/userNameTextView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="User Name"
+        android:textSize="18sp"
+        android:padding="16dp" />
+
+    <!-- First Category -->
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Category 1"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        android:padding="16dp" />
+
+    <TextView
+        android:id="@+id/setting1TextView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Setting 1"
+        android:padding="16dp" />
+
+    <TextView
+        android:id="@+id/setting2TextView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Setting 2"
+        android:padding="16dp" />
+
+    <TextView
+        android:id="@+id/setting3TextView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Setting 3"
+        android:padding="16dp" />
+
+    <!-- Second Category -->
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Category 2"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        android:padding="16dp" />
+
+    <TextView
+        android:id="@+id/setting4TextView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Setting 4"
+        android:padding="16dp" />
+
+    <TextView
+        android:id="@+id/setting5TextView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Setting 5"
+        android:padding="16dp" />
+
+    <TextView
+        android:id="@+id/setting6TextView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Setting 6"
+        android:padding="16dp" />
+
+    <!-- Logout Button -->
+    <Button
+        android:id="@+id/logoutButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        android:onClick="logoutButtonClicked"
+        android:text="Logout" />
+
+</LinearLayout>
+

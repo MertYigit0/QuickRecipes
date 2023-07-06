@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/recipes_nav"
+    app:startDestination="@id/recipes_SearchFragment">
+
+    <fragment
+        android:id="@+id/recipes_SearchFragment"
+        android:name="com.example.quickrecipes.recipes.Recipes_SearchFragment"
+        android:label="fragment_recipes__search"
+        tools:layout="@layout/fragment_recipes__search" >
+        <action
+            android:id="@+id/action_recipes_SearchFragment_to_favoritesFragment"
+            app:destination="@id/favoritesFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/favoritesFragment"
+        android:name="com.example.quickrecipes.recipes.FavoritesFragment"
+        android:label="fragment_favorites"
+        tools:layout="@layout/fragment_favorites" >
+        <action
+            android:id="@+id/action_favoritesFragment_to_settingsFragment"
+            app:destination="@id/settingsFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/settingsFragment"
+        android:name="com.example.quickrecipes.recipes.SettingsFragment"
+        android:label="fragment_settings"
+        tools:layout="@layout/fragment_settings" >
+        <action
+            android:id="@+id/action_settingsFragment_to_recipes_SearchFragment"
+            app:destination="@id/recipes_SearchFragment" />
+    </fragment>
+</navigation>
