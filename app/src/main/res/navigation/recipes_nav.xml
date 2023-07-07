@@ -13,6 +13,9 @@
         <action
             android:id="@+id/action_recipes_SearchFragment_to_favoritesFragment"
             app:destination="@id/favoritesFragment" />
+        <action
+            android:id="@+id/action_recipes_SearchFragment_to_foodDetailFragment"
+            app:destination="@id/foodDetailFragment" />
     </fragment>
     <fragment
         android:id="@+id/favoritesFragment"
@@ -30,6 +33,15 @@
         tools:layout="@layout/fragment_settings" >
         <action
             android:id="@+id/action_settingsFragment_to_recipes_SearchFragment"
+            app:destination="@id/recipes_SearchFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/foodDetailFragment"
+        android:name="com.example.quickrecipes.recipes.food.FoodDetailFragment"
+        android:label="fragment_food_detail"
+        tools:layout="@layout/fragment_food_detail" >
+        <action
+            android:id="@+id/action_foodDetailFragment_to_recipes_SearchFragment"
             app:destination="@id/recipes_SearchFragment" />
     </fragment>
 </navigation>

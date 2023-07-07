@@ -19,7 +19,7 @@ import java.util.ArrayList;
 public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapter.MyViewHolder> {
 
 
-    private ArrayList<Food> foodArrayList;
+    public ArrayList<Food> foodArrayList;
     public RecyclerViewAdapter(ArrayList<Food> foodArrayList) {
         this.foodArrayList = foodArrayList;
     }

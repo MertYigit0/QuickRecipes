@@ -77,7 +77,7 @@ public class FavoritesFragment extends Fragment {
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-        ImageView imageView = view.findViewById(R.id.imageView);
+       // ImageView imageView = view.findViewById(R.id.imageView);
 
         getData();
 
@@ -109,4 +109,8 @@ public class FavoritesFragment extends Fragment {
         });
 
     }
+
+
+
+
 }
