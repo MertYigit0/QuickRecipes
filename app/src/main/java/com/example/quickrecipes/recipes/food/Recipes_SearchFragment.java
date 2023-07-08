@@ -4,7 +4,10 @@ import android.os.Bundle;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.cardview.widget.CardView;
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentTransaction;
 import androidx.navigation.NavController;
 import androidx.navigation.NavDirections;
 import androidx.navigation.Navigation;
@@ -13,6 +16,8 @@ import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.transition.Slide;
+import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -65,7 +70,7 @@ public class Recipes_SearchFragment extends Fragment {
         firestore = FirebaseFirestore.getInstance();
 
         foodArrayList = new ArrayList<>();
-        recyclerViewAdapter = new RecyclerViewAdapter(foodArrayList);
+        recyclerViewAdapter = new RecyclerViewAdapter(foodArrayList ,this);
 
 
 
@@ -102,19 +107,10 @@ public class Recipes_SearchFragment extends Fragment {
         GridLayoutManager layoutManager = new GridLayoutManager(getContext(), 2);
         binding.recyclerView.setLayoutManager(layoutManager);
 
-        ImageView recipeImage = view.findViewById(R.id.recipeImage);
 
 
-        recipeImage.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                RecyclerView.ViewHolder viewHolder = binding.recyclerView.findContainingViewHolder(view);
-                if (viewHolder != null && viewHolder.getAdapterPosition() != RecyclerView.NO_POSITION) {
-                    int position = viewHolder.getAdapterPosition();
-                    foodCardClicked(position);
-                }
-            }
-        });
+
+
 
 
 
@@ -154,16 +150,19 @@ public class Recipes_SearchFragment extends Fragment {
 
 
 
-    private void foodCardClicked(int position) {
 
 
 
-        FoodDetailFragment foodDetailFragment= new FoodDetailFragment();
-        getActivity().getSupportFragmentManager().beginTransaction()
-                .replace(R.id.recipes_nav_host_fragment, foodDetailFragment, "findThisFragment")
-                .addToBackStack(null)
-                .commit();
 
+    public void foodCardClicked(int position ,View view) {
+        Bundle bundle = new Bundle();
+        bundle.putInt("position", position);
+        FoodDetailFragment foodDetailFragment = new FoodDetailFragment();
+        foodDetailFragment.setArguments(bundle);
+
+
+        NavDirections action = Recipes_SearchFragmentDirections.actionRecipesSearchFragmentToFoodDetailFragment();
+        Navigation.findNavController(view).navigate(action);
     }
 
 

@@ -7,16 +7,15 @@
     tools:context=".recipes.food.Recipes_SearchFragment">
 
 
-
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerView"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="668dp"
 
-        android:padding="8dp"
-        android:clipToPadding="false"
         android:background="@android:color/white"
+        android:clipToPadding="false"
         android:orientation="vertical"
+        android:padding="8dp"
         app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
         app:spanCount="2"
 
