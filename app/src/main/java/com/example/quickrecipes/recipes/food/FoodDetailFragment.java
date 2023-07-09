@@ -70,7 +70,9 @@ public class FoodDetailFragment extends Fragment {
 
         // ViewBinding ile bağlı öğeleri kullanabilirsiniz
         View view = binding.getRoot();
-
+        if (container != null) {
+            container.removeAllViews();
+        }
 
 
         // ViewBinding'in kök görünümünü döndürün

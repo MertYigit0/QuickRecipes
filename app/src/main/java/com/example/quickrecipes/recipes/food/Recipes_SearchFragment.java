@@ -8,6 +8,7 @@ import androidx.cardview.widget.CardView;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
+import androidx.navigation.ActionOnlyNavDirections;
 import androidx.navigation.NavController;
 import androidx.navigation.NavDirections;
 import androidx.navigation.Navigation;
@@ -148,29 +149,22 @@ public class Recipes_SearchFragment extends Fragment {
         }
     }
 
-
-
-
-
-
-
-    public void foodCardClicked(int position ,View view) {
+    public void foodCardClicked(int position, View view) {
+        // Create a bundle to pass the position argument
         Bundle bundle = new Bundle();
         bundle.putInt("position", position);
-        FoodDetailFragment foodDetailFragment = new FoodDetailFragment();
-        foodDetailFragment.setArguments(bundle);
 
+        // Create the NavDirections object manually
+        NavDirections action = new ActionOnlyNavDirections(R.id.action_recipes_SearchFragment_to_foodDetailFragment);
+        action.getArguments().putAll(bundle);
 
-        NavDirections action = Recipes_SearchFragmentDirections.actionRecipesSearchFragmentToFoodDetailFragment();
+        // Navigate to the destination fragment with the arguments
         Navigation.findNavController(view).navigate(action);
+
+
+        //NavDirections action = Recipes_SearchFragmentDirections.actionRecipesSearchFragmentToFoodDetailFragment();
+        //Navigation.findNavController(view).navigate(action);
     }
-
-
-
-
-
-
-
 
 
 
