@@ -1,9 +1,12 @@
 package com.example.quickrecipes.recipes.food;
 
+import static com.google.android.material.color.utilities.MaterialDynamicColors.error;
+
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.appcompat.widget.SearchView;
 import androidx.cardview.widget.CardView;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
@@ -38,6 +41,7 @@ import com.google.firebase.firestore.QuerySnapshot;
 import com.google.firebase.storage.FirebaseStorage;
 
 import java.util.ArrayList;
+import java.util.List;
 import java.util.Map;
 
 public class Recipes_SearchFragment extends Fragment {
@@ -54,6 +58,7 @@ public class Recipes_SearchFragment extends Fragment {
 
     RecyclerViewAdapter recyclerViewAdapter;
 
+    private SearchView searchView;
 
 
     public Recipes_SearchFragment() {
@@ -74,21 +79,14 @@ public class Recipes_SearchFragment extends Fragment {
         recyclerViewAdapter = new RecyclerViewAdapter(foodArrayList ,this);
 
 
-
     }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        // ViewBinding oluşturma
+
         binding = FragmentRecipesSearchBinding.inflate(inflater, container, false);
-
-        // ViewBinding ile bağlı öğeleri kullanabilirsiniz
         View view = binding.getRoot();
-
-
-
-        // ViewBinding'in kök görünümünü döndürün
         return view;
     }
 
@@ -108,9 +106,27 @@ public class Recipes_SearchFragment extends Fragment {
         GridLayoutManager layoutManager = new GridLayoutManager(getContext(), 2);
         binding.recyclerView.setLayoutManager(layoutManager);
 
+        //Search Bar
+        searchView = view.findViewById(R.id.searchView);
 
+        searchView = view.findViewById(R.id.searchView);
+        searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
+            @Override
+            public boolean onQueryTextSubmit(String query) {
 
+                recyclerViewAdapter.filterRecyclerViewData(query);
 
+                return true;
+            }
+
+            @Override
+            public boolean onQueryTextChange(String newText) {
+
+                recyclerViewAdapter.filterRecyclerViewData(newText);
+
+                return true;
+            }
+        });
 
 
 
@@ -165,6 +181,8 @@ public class Recipes_SearchFragment extends Fragment {
         //NavDirections action = Recipes_SearchFragmentDirections.actionRecipesSearchFragmentToFoodDetailFragment();
         //Navigation.findNavController(view).navigate(action);
     }
+
+
 
 
 
