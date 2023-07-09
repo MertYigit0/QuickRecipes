@@ -15,6 +15,8 @@
         app:cardCornerRadius="8dp"
         app:cardElevation="4dp"
         app:cardUseCompatPadding="true"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
         <LinearLayout
@@ -42,15 +44,21 @@
     </androidx.cardview.widget.CardView>
 
     <!-- CardView 2: Ingredients -->
+
+    <!-- CardView 3: Directions -->
+
     <androidx.cardview.widget.CardView
         android:id="@+id/cardView2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="16dp"
+        android:layout_marginTop="4dp"
         app:cardCornerRadius="8dp"
         app:cardElevation="4dp"
         app:cardUseCompatPadding="true"
-        app:layout_constraintTop_toBottomOf="@id/cardView1">
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/cardView1">
 
         <TextView
             android:id="@+id/ingredientsText"
@@ -62,26 +70,39 @@
 
     </androidx.cardview.widget.CardView>
 
-    <!-- CardView 3: Directions -->
     <androidx.cardview.widget.CardView
         android:id="@+id/cardView3"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_width="373dp"
+        android:layout_height="172dp"
         android:layout_margin="16dp"
+        android:layout_marginTop="8dp"
         app:cardCornerRadius="8dp"
         app:cardElevation="4dp"
         app:cardUseCompatPadding="true"
-        app:layout_constraintTop_toBottomOf="@id/cardView2"
-        app:layout_constraintBottom_toBottomOf="parent">
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/cardView2">
 
         <TextView
             android:id="@+id/directionsText"
             android:layout_width="363dp"
-            android:layout_height="153dp"
+            android:layout_height="181dp"
             android:padding="16dp"
             android:textAppearance="?attr/textAppearanceBody1"
             tools:text="Directions" />
 
     </androidx.cardview.widget.CardView>
+
+    <Button
+        android:id="@+id/favoriteButton"
+        android:layout_width="263dp"
+        android:layout_height="48dp"
+        android:onClick="addFavoriteClicked"
+        android:text="Add to Favorites"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/cardView3"
+        app:layout_constraintVertical_bias="0.076" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

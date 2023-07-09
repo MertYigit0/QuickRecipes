@@ -10,6 +10,7 @@ import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -88,6 +89,19 @@ public class FoodDetailFragment extends Fragment {
             System.out.println(position);
             getData();
         }
+
+
+        //ADD FAVORITE BUTTON
+        Button favoriteButton = view.findViewById(R.id.favoriteButton);
+        favoriteButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                addFavoriteClicked(position);
+            }
+        });
+
+
     }
 
     private void getData() {
@@ -125,6 +139,9 @@ public class FoodDetailFragment extends Fragment {
     }
 
 
+    public void addFavoriteClicked(int position){
+        Toast.makeText(getContext(), "EKLENDI FAVORILERE " + position, Toast.LENGTH_SHORT).show();
+    }
 
 
 

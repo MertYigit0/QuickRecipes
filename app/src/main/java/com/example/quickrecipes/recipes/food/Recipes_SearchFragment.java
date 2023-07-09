@@ -46,8 +46,7 @@ import java.util.Map;
 
 public class Recipes_SearchFragment extends Fragment {
 
-    private FirebaseStorage firebaseStorage ;
-    private FirebaseAuth firebaseAuth;
+
 
     private FirebaseFirestore firestore;
 
@@ -71,8 +70,6 @@ public class Recipes_SearchFragment extends Fragment {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        firebaseStorage = FirebaseStorage.getInstance();
-        firebaseAuth = FirebaseAuth.getInstance();
         firestore = FirebaseFirestore.getInstance();
 
         foodArrayList = new ArrayList<>();

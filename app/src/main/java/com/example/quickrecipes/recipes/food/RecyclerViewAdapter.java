@@ -5,27 +5,13 @@ import android.text.TextUtils;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Filter;
-import android.widget.ImageView;
-import android.widget.TextView;
-import android.widget.Toast;
-
 import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
-import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.RecyclerView;
-
-import com.example.quickrecipes.R;
 import com.example.quickrecipes.databinding.RecipeImageBinding;
-import com.google.firebase.firestore.DocumentSnapshot;
-import com.google.firebase.firestore.EventListener;
 import com.google.firebase.firestore.FirebaseFirestore;
-import com.google.firebase.firestore.FirebaseFirestoreException;
-import com.google.firebase.firestore.QuerySnapshot;
 import com.squareup.picasso.Picasso;
-
 import java.util.ArrayList;
-import java.util.Map;
+
 
 public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapter.MyViewHolder> {
 
@@ -56,10 +42,7 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
         holder.recipeImageBinding.recipeText.setText(foodArrayList.get(position).name);
        // holder.recipeImageBinding.recipeText.setText(foodArrayList.get(position).ingredients);
 
-
         Picasso.get().load(foodArrayList.get(position).downloadUrl).into(holder.recipeImageBinding.recipeImage);
-
-
 
         holder.recipeImageBinding.foodCard.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -70,9 +53,6 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
                 int position = holder.getAdapterPosition();
 
                 fragment.foodCardClicked(position,view);
-
-
-
 
             }
         });
@@ -93,10 +73,8 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
             this.recipeImageBinding = recyclerRowBinding;
         }
 
-
-
-
     }
+
     public void filterRecyclerViewData(String query) {
         ArrayList<Food> filteredList = new ArrayList<>();
 
@@ -111,13 +89,10 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
                 }
             }
         }
-
         // Eski verileri temizleme
         foodArrayList.clear();
-
         // Yeni filtrelenmiş verileri ekleme
         foodArrayList.addAll(filteredList);
-
         // Eğer filtreleme işlemi sonucunda hiç veri kalmadıysa, orijinal verileri geri yükleme
         if (filteredList.isEmpty()) {
             foodArrayList.addAll(foodArrayList);
@@ -125,11 +100,4 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
 
         notifyDataSetChanged();
     }
-
-
-
-
-
-
-
 }
