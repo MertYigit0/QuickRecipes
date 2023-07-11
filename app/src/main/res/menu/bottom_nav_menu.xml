@@ -5,10 +5,6 @@
         android:title="@string/home"
         android:icon="@drawable/baseline_home_24" />
 
-    <item
-        android:id="@+id/favoritesFragment"
-        android:title="@string/favorites"
-        android:icon="@drawable/baseline_favorite_24" />
 
     <item
         android:id="@+id/settingsFragment"

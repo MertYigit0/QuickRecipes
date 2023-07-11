@@ -128,11 +128,11 @@ public class FavoritesFragment extends Fragment {
         bundle.putInt("position", position);
 
         // Create the NavDirections object manually
-        NavDirections action = new ActionOnlyNavDirections(R.id.action_favoritesFragment_to_foodDetailFragment);
-        action.getArguments().putAll(bundle);
+      //  NavDirections action = new ActionOnlyNavDirections(R.id.action_favoritesFragment_to_foodDetailFragment);
+        //action.getArguments().putAll(bundle);
 
         // Navigate to the destination fragment with the arguments
-        Navigation.findNavController(view).navigate(action);
+     //   Navigation.findNavController(view).navigate(action);
 
 
         //NavDirections action = Recipes_SearchFragmentDirections.actionRecipesSearchFragmentToFoodDetailFragment();
