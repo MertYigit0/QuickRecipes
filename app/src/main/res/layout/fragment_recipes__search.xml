@@ -3,7 +3,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context=".recipes.food.Recipes_SearchFragment">
+    tools:context=".recipes.food.Recipes_SearchFragment"
+    android:background="@color/bej">
 
     <androidx.appcompat.widget.SearchView
         android:id="@+id/searchView"
