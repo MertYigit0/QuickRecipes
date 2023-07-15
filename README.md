@@ -3,8 +3,9 @@
 QuickRecipes is an Android application developed in Java that allows users to browse and discover various recipes. 
 
 
+![image (13)](https://github.com/MertYigit0/QuickRecipes/assets/107271196/835a2751-691e-4426-8632-88777e3cd7e2)
 
-![image](https://github.com/MertYigit0/QuickRecipes/assets/107271196/1719fa9e-771b-4a30-b89a-da58f44f371e)
+
 
 ## Technologies Used
 
