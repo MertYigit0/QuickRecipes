@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-
+android:background="@drawable/back"
 
     >
 
@@ -13,7 +13,7 @@
         android:id="@+id/textView2"
         android:layout_width="203dp"
         android:layout_height="64dp"
-        android:layout_marginTop="148dp"
+        android:layout_marginTop="264dp"
         android:text="REGISTER"
         android:textColor="@color/orange"
         android:textSize="40dp"
@@ -26,7 +26,7 @@
         android:id="@+id/editTextTextEmailAddress2"
         android:layout_width="221dp"
         android:layout_height="50dp"
-        android:layout_marginTop="60dp"
+        android:layout_marginTop="50dp"
         android:background="@drawable/shape"
         android:ems="10"
         android:hint="Email"
