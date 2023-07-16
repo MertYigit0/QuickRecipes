@@ -1,5 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <shape xmlns:android="http://schemas.android.com/apk/res/android">
-    <solid android:color="#FFD9C0" /> <!-- Specify the background color -->
+    <stroke
+        android:width="2dp"
+        android:color="#959595"
+    />
+    <solid android:color="#FAF0D7" /> <!-- Specify the background color -->
     <corners android:radius="20dp" /> <!-- Adjust the radius value to control the roundness -->
 </shape>
